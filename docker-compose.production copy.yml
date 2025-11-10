@@ -1,10 +1,6 @@
 
 services:
   web:
-    build:
-      context: ./path/to/project
-      dockerfile: Dockerfile
-      target: ${BUILD_STAGE:-dev}
     image: web-${BUILD_STAGE:-dev}
     container_name: web-${BUILD_STAGE:-dev}-container
     env_file: ./path/to/.env
@@ -15,10 +11,6 @@ services:
       - database
 
   backend:
-    build:
-      context: ./path/to/backend
-      dockerfile: Dockerfile
-      target: ${BUILD_STAGE:-dev}
     image: backend-${BUILD_STAGE:-dev}
     container_name: backend-${BUILD_STAGE:-dev}-container
     env_file: ./path/to/.env
