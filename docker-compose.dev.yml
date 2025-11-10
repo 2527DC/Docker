@@ -1,6 +1,6 @@
 
  # this is the composer file for development  it is used to build and run the container 
- #  from the local images 
+ #  from the local images  
 
 services:
   web:
