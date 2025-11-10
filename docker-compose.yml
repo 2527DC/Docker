@@ -1,0 +1,31 @@
+# composer file to just buid the images 
+
+
+service:
+  
+  web:
+    build:
+      image: imagename 
+      container_name : custom container name 
+      env_file: path of the host env file  
+      ports:
+        -9000:9000
+      
+
+  backend:
+    build:
+      image:  name of the image    
+      container_name: custom cuntainer name 
+      env_file: path of the env file from the host 
+      depends_on: database ( the name of the service that it deends on )
+      ports:
+        -8000:8000
+
+  database:
+      build:
+        image: databse image name 
+        container_name: custome name 
+        environaents:
+          - DATABASE_URL: ${DATABASE_URL}
+          - HOST: ${HOST}
+
